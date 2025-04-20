@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Parent 1's name</th>
+    <th>Parent 2's name</th>
+    <th>Spouse's name</th>
+  </tr>
+  {% for person in family %}
+    <tr>
+      <td>{{ person.first_name }}</td>
+      <td>{{ person.last_name }}</td>
+      <td>{{ person.left_parent.first_name }} {{ person.left_parent.last_name }}</td>
+      <td>{{ person.right_parent.first_name }} {{ person.right_parent.last_name }}</td>
+      <td>{{ person.spouse.first_name }} {{ person.spouse.last_name }}</td>
+    </tr>
+  {% endfor %}
+</table>
